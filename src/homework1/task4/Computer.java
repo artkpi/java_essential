@@ -11,7 +11,10 @@ public class Computer {
         Computer Asus = new Computer();
 
         for (int i = 0; i < computers.length; i++) {
-        computers[i] = iMac;
+        computers[i] = new Computer();
+        }
+        for (int i = 0; i < computers.length; i++) {
+            System.out.println(computers[i]);
         }
 
     }
