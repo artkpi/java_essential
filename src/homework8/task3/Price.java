@@ -16,25 +16,17 @@ public class Price {
         Price shop1 = new Price(in.next(), in.next(), in.nextInt());
         System.out.println("Enter name of the second shop, product and prise: ");
         Price shop2 = new Price(in.next(), in.next(), in.nextInt());
-        Price[] products = {shop1, shop2};
+        Price[] shops = {shop1, shop2};
         //Arrays.sort(products);
 
         System.out.println("Enter the shop: ");
         String newNameShop = in.next();
-        Exception ex = new Exception("There is no such shop");
-        if (newNameShop.equals(shop1.getShop())) {
-            System.out.println("Product: " + shop1.getNameOfProduct() + " Price: " + shop1.getPrice());
-        } if (newNameShop.equals(shop2.getShop())) {
-            System.out.println("Product: " + shop2.getNameOfProduct() + " Price: " + shop2.getPrice());
-        } else {
-                try {
-                    throw ex;
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                }
+
+        for (Price temp: shops) {
+            if (newNameShop.equals(temp.getShop())) {
+                System.out.println("Product: " + temp.getNameOfProduct() + " Price: " + temp.getPrice());
+            }
         }
-
-
     }
     public Price(String shop, String nameOfProduct, int price) {
         this.shop = shop;

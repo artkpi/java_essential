@@ -22,14 +22,11 @@ public class Calculator {
                 System.out.println("The multiplication of this numbers is: " + mul(number1, number2));
                 break;
             case ("/"):
-                Exception ex = new Exception("Devision by zero!!!");
-                if (number2 != 0) {
+                try {
                     System.out.println("The division of this numbers is: " + div(number1, number2));
-                } try {
-                        throw ex;
-                    } catch (Exception e) {
+                } catch (Exception e) {
                         System.out.println(e.getMessage());
-                    }
+                }
 
 
         }
@@ -44,8 +41,8 @@ public class Calculator {
     public static int mul(int a, int b) {
         return a * b;
     }
-    public static double div(int a, int b) {
-        return (double) a / b;
+    public static int div(int a, int b) {
+        return a / b;
     }
 }
 
