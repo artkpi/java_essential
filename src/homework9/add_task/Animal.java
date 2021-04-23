@@ -23,8 +23,8 @@ public class Animal {
 
     @Override
     public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (!(o instanceof Animal)) return false;
+        if (this == o) return true;
+        if (!(o instanceof Animal)) return false;
         Animal animal = (Animal) o;
         return getAge() == animal.getAge() && isTail() == animal.isTail() && getName().equals(animal.getName());
     }
