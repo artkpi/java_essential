@@ -22,10 +22,16 @@ public class Price {
         System.out.println("Enter the shop: ");
         String newNameShop = in.next();
 
-        for (Price temp: shops) {
-            if (newNameShop.equals(temp.getShop())) {
-                System.out.println("Product: " + temp.getNameOfProduct() + " Price: " + temp.getPrice());
+        try {
+            for (Price temp: shops) {
+                if (newNameShop.equals(temp.getShop())) {
+                    System.out.println("Product: " + temp.getNameOfProduct() + " Price: " + temp.getPrice());
+                return;
+                }
             }
+            throw new Exception("There is no such shop in database.");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
     public Price(String shop, String nameOfProduct, int price) {
